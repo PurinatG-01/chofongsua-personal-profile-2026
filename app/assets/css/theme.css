@@ -1,0 +1,13 @@
+:root {
+  --forest-bg: #0b1411;        /* deep forest night */
+  --forest-surface: #111c17;  /* card / surface */
+  --forest-border: #1f2e28;   /* subtle lines */
+  --forest-text: #d6efe3;     /* fog light */
+  --forest-muted: #7fa89a;    /* moss */
+}
+
+html,
+body {
+  background-color: var(--forest-bg);
+  color: var(--forest-text);
+}
