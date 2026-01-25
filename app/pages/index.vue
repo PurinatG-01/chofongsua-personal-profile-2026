@@ -1,18 +1,45 @@
 <template>
-  <div class="space-y-6">
-    <h1 class="text-4xl font-semibold tracking-tight">
-      Welcome to the forest
-    </h1>
+  <div class="max-w-3xl mx-auto space-y-16">
 
-    <p class="text-[var(--forest-muted)] leading-relaxed">
-      This is a quiet place for long-form thinking, software notes,
-      and ideas that need room to breathe.
-    </p>
+    <!-- Header -->
+    <section v-if="data" class="space-y-3">
+      <h1 class="text-4xl font-semibold tracking-tight text-accent">
+        {{ data.name }}
+      </h1>
 
-    <UCard class="bg-[var(--forest-surface)] border border-[var(--forest-border)]">
-      <p>
-        Cards should feel like wooden cabins, not glass boxes.
+      <p class="text-muted">
+        {{ data.title }} · {{ data.location }}
       </p>
-    </UCard>
+    </section>
+
+    <!-- Intro -->
+    <section v-if="data" class="bg-surface border border-border rounded-lg p-6">
+      <p class="leading-relaxed">
+        {{ data.intro }}
+      </p>
+    </section>
+
+    <!-- Interests -->
+    <section v-if="data" class="space-y-4">
+      <h2 class="text-lg font-medium">
+        Interests
+      </h2>
+
+      <ul class="space-y-1 text-muted">
+        <li v-for="item in data.interests" :key="item" class="before:content-['▸'] before:text-accent before:mr-2">
+          {{ item }}
+        </li>
+      </ul>
+    </section>
+
+    <!-- Error -->
+    <section v-if="error" class="text-red-400">
+      Failed to load profile.
+    </section>
+
   </div>
 </template>
+
+<script setup lang="ts">
+const { data, error } = await useFetch('/api/profile')
+</script>

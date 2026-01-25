@@ -1,13 +1,40 @@
 :root {
-  --forest-bg: #0b1411;        /* deep forest night */
-  --forest-surface: #111c17;  /* card / surface */
-  --forest-border: #1f2e28;   /* subtle lines */
-  --forest-text: #d6efe3;     /* fog light */
-  --forest-muted: #7fa89a;    /* moss */
+  /* Existing */
+  --bg-main: #0b0e11;
+  --bg-surface: #11151a;
+  --border-subtle: #1f2630;
+
+  /* Text – tuned for dark background */
+  --text-main: #f3f4f6;   /* near-white, not pure */
+  --text-muted: #b6c2cf;  /* readable gray */
+  --text-dim: #8a98ab;    /* secondary logs */
+
+  /* Accent */
+  --accent-primary: #4ade80;
+}
+
+/* Force Nuxt UI text tokens to map correctly */
+:root {
+  --ui-text: var(--text-main);
+  --ui-text-muted: var(--text-muted);
+  --ui-text-dimmed: var(--text-dim);
 }
 
 html,
 body {
-  background-color: var(--forest-bg);
-  color: var(--forest-text);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    rgba(255,255,255,0.015) 1px,
+    transparent 1px
+  );
+  background-size: 100% 4px;
+  opacity: 0.04;
 }
