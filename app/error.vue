@@ -1,26 +1,24 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center px-6">
-    <div class="max-w-xl w-full space-y-8">
-
+  <div class="flex min-h-screen items-center justify-center px-6">
+    <div class="w-full max-w-xl space-y-8">
       <!-- Status -->
       <div class="space-y-2">
-        <p class="text-sm text-muted tracking-widest">
-          SYSTEM ERROR
-        </p>
+        <p class="text-muted text-sm tracking-widest">SYSTEM ERROR</p>
 
-        <h1 class="text-6xl font-semibold text-accent">
+        <h1 class="text-accent text-6xl font-semibold">
           {{ statusCode }}
         </h1>
       </div>
 
       <!-- Message -->
-      <div class="bg-surface border border-border rounded-lg p-6 space-y-4">
+      <div class="bg-surface border-border space-y-4 rounded-lg border p-6">
         <p class="text-lg">
           {{ message }}
         </p>
 
-        <p class="text-sm text-muted">
-          The requested resource could not be located or the system encountered an unexpected condition.
+        <p class="text-muted text-sm">
+          The requested resource could not be located or the system encountered an unexpected
+          condition.
         </p>
       </div>
 
@@ -28,13 +26,13 @@
       <div class="flex gap-4">
         <NuxtLink
           to="/"
-          class="inline-flex items-center px-4 py-2 border border-border rounded-md text-sm text-accent hover:bg-surface transition"
+          class="border-border text-accent hover:bg-surface inline-flex items-center rounded-md border px-4 py-2 text-sm transition"
         >
           ▸ return home
         </NuxtLink>
 
         <button
-          class="inline-flex items-center px-4 py-2 border border-border rounded-md text-sm text-muted hover:text-accent transition"
+          class="border-border text-muted hover:text-accent inline-flex items-center rounded-md border px-4 py-2 text-sm transition"
           @click="clear"
         >
           ▸ reset system
@@ -42,23 +40,20 @@
       </div>
 
       <!-- Footer log -->
-      <p class="text-xs text-muted">
-        [SYS] {{ new Date().toISOString() }}
-      </p>
-
+      <p class="text-muted text-xs">[SYS] {{ new Date().toISOString() }}</p>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-const error = useError()
+  const error = useError()
 
-const statusCode = computed(() => error.value?.statusCode || 500)
-const message = computed(
-  () => error.value?.statusMessage || 'An unexpected system error occurred.'
-)
+  const statusCode = computed(() => error.value?.statusCode || 500)
+  const message = computed(
+    () => error.value?.statusMessage || 'An unexpected system error occurred.',
+  )
 
-function clear() {
-  clearError({ redirect: '/' })
-}
+  function clear() {
+    clearError({ redirect: '/' })
+  }
 </script>

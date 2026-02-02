@@ -1,9 +1,5 @@
 module.exports = {
-  content: [
-    './pages/**/*.vue',
-    './components/**/*.vue',
-    './server/**/*.ts'
-  ],
+  content: ['./pages/**/*.vue', './components/**/*.vue', './server/**/*.ts'],
   theme: {
     extend: {
       colors: {
@@ -11,9 +7,9 @@ module.exports = {
         surface: 'var(--bg-surface)',
         muted: 'var(--text-muted)',
         accent: 'var(--accent-primary)',
-        border: 'var(--border-subtle)'
-      }
-    }
+        border: 'var(--border-subtle)',
+      },
+    },
   },
-  plugins: []
+  plugins: [],
 }

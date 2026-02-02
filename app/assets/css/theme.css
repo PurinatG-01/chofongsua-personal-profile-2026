@@ -1,13 +1,73 @@
 :root {
+  --color-onyx-50: #eff5f2;
+  --color-onyx-100: #e0ebe6;
+  --color-onyx-200: #c0d8cc;
+  --color-onyx-300: #a1c4b3;
+  --color-onyx-400: #82b099;
+  --color-onyx-500: #629d80;
+  --color-onyx-600: #4f7d66;
+  --color-onyx-700: #3b5e4d;
+  --color-onyx-800: #273f33;
+  --color-onyx-900: #141f1a;
+  --color-onyx-950: #0e1612;
+
+  --color-ash-grey-50: #f4f4f0;
+  --color-ash-grey-100: #e9e9e2;
+  --color-ash-grey-200: #d2d3c5;
+  --color-ash-grey-300: #bcbda8;
+  --color-ash-grey-400: #a6a78b;
+  --color-ash-grey-500: #90916e;
+  --color-ash-grey-600: #737458;
+  --color-ash-grey-700: #565742;
+  --color-ash-grey-800: #393a2c;
+  --color-ash-grey-900: #1d1d16;
+  --color-ash-grey-950: #14140f;
+
+  --color-dust-grey-50: #f4f4f0;
+  --color-dust-grey-100: #e9e8e2;
+  --color-dust-grey-200: #d3d2c5;
+  --color-dust-grey-300: #bdbba8;
+  --color-dust-grey-400: #a7a58b;
+  --color-dust-grey-500: #918e6e;
+  --color-dust-grey-600: #747258;
+  --color-dust-grey-700: #575542;
+  --color-dust-grey-800: #3a392c;
+  --color-dust-grey-900: #1d1c16;
+  --color-dust-grey-950: #14140f;
+
+  --color-brown-red-50: #faebeb;
+  --color-brown-red-100: #f5d7d6;
+  --color-brown-red-200: #ebaead;
+  --color-brown-red-300: #e08685;
+  --color-brown-red-400: #d65e5c;
+  --color-brown-red-500: #cc3633;
+  --color-brown-red-600: #a32b29;
+  --color-brown-red-700: #7a201f;
+  --color-brown-red-800: #521514;
+  --color-brown-red-900: #290b0a;
+  --color-brown-red-950: #1d0707;
+
+  --color-chestnut-50: #faebea;
+  --color-chestnut-100: #f5d8d6;
+  --color-chestnut-200: #ebb0ad;
+  --color-chestnut-300: #e18984;
+  --color-chestnut-400: #d7615b;
+  --color-chestnut-500: #cd3a32;
+  --color-chestnut-600: #a42e28;
+  --color-chestnut-700: #7b231e;
+  --color-chestnut-800: #521714;
+  --color-chestnut-900: #290c0a;
+  --color-chestnut-950: #1d0807;
+
   /* Existing */
   --bg-main: #0b0e11;
   --bg-surface: #11151a;
   --border-subtle: #1f2630;
 
   /* Text – tuned for dark background */
-  --text-main: #f3f4f6;   /* near-white, not pure */
-  --text-muted: #b6c2cf;  /* readable gray */
-  --text-dim: #8a98ab;    /* secondary logs */
+  --text-main: #f3f4f6; /* near-white, not pure */
+  --text-muted: #b6c2cf; /* readable gray */
+  --text-dim: #8a98ab; /* secondary logs */
 
   /* Accent */
   --accent-primary: #4ade80;
@@ -27,14 +87,11 @@ body {
 }
 
 body::after {
-  content: "";
+  content: '';
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(
-    rgba(255,255,255,0.015) 1px,
-    transparent 1px
-  );
+  background: linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px);
   background-size: 100% 4px;
   opacity: 0.04;
 }
