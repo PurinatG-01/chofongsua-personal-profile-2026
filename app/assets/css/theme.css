@@ -1,4 +1,10 @@
 :root {
+  --color-onyx: #0a100dff;
+  --color-ash-grey: #b9baa3ff;
+  --color-dust-grey: #d6d5c9ff;
+  --color-brown-red: #a22c29ff;
+  --color-chestnut: #902923ff;
+
   --color-onyx-50: #eff5f2;
   --color-onyx-100: #e0ebe6;
   --color-onyx-200: #c0d8cc;
@@ -58,32 +64,36 @@
   --color-chestnut-800: #521714;
   --color-chestnut-900: #290c0a;
   --color-chestnut-950: #1d0807;
-
-  /* Existing */
-  --bg-main: #0b0e11;
-  --bg-surface: #11151a;
-  --border-subtle: #1f2630;
-
-  /* Text – tuned for dark background */
-  --text-main: #f3f4f6; /* near-white, not pure */
-  --text-muted: #b6c2cf; /* readable gray */
-  --text-dim: #8a98ab; /* secondary logs */
-
-  /* Accent */
-  --accent-primary: #4ade80;
 }
 
 /* Force Nuxt UI text tokens to map correctly */
 :root {
-  --ui-text: var(--text-main);
-  --ui-text-muted: var(--text-muted);
-  --ui-text-dimmed: var(--text-dim);
+  --font-sans: 'Space Mono', monospace;
+  /* Existing */
+  --bg-main: var(--color-onyx);
+  --bg-surface: var(--color-onyx-600);
+  --border-subtle: var(--color-onyx-900);
+  /* Text – tuned for dark background */
+  --text-main: var(--color-dust-grey-50); /* near-white, not pure */
+  --text-muted: var(--color-dust-grey-200); /* readable gray */
+  --text-dim: var(--color-dust-grey-500); /* secondary logs */
+
+  /* Semantic */
+  --accent-primary: var(--color-brown-red-600);
+  --accent-secondary: var(--color-chestnut-300);
+
+  /* Nuxt UI bridge */
+  --ui-primary: var(--accent-primary);
+  --ui-secondary: var(--accent-secondary);
+  --ui-neutral: var(--text-muted);
 }
 
 html,
 body {
   background-color: var(--bg-main);
   color: var(--text-main);
+  font-family: var(--font-sans);
+  letter-spacing: -0.01em;
 }
 
 body::after {

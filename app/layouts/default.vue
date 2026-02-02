@@ -1,24 +1,22 @@
 <template>
-  <div class="flex min-h-screen flex-col justify-start">
+  <div class="bg-bg-main text-text-main flex min-h-screen flex-col">
     <!-- Header -->
-    <header class="border-b border-[var(--forest-border)]">
+    <header class="border-border-subtle border-b">
       <UContainer class="flex items-center justify-between py-5">
-        <NuxtLink
-          to="/"
-          class="hover:text-primary text-lg font-semibold tracking-wide text-[var(--forest-text)]"
-        >
+        <NuxtLink to="/" class="hover:text-accent-primary text-lg font-semibold tracking-wide">
           chofongsua
         </NuxtLink>
 
-        <nav class="flex gap-6 text-sm text-[var(--forest-muted)]">
-          <NuxtLink to="/blog" class="hover:text-primary"> Blog </NuxtLink>
-          <NuxtLink to="/cv" class="hover:text-primary"> CV </NuxtLink>
+        <nav class="text-text-muted flex gap-6 text-sm">
+          <NuxtLink to="/blog" class="hover:text-accent-primary"> Blog </NuxtLink>
+
+          <NuxtLink to="/cv" class="hover:text-accent-primary"> CV </NuxtLink>
         </nav>
       </UContainer>
     </header>
 
     <!-- Main -->
-    <main>
+    <main class="flex-1">
       <UContainer class="py-10">
         <div class="mx-auto max-w-4xl">
           <NuxtPage />
@@ -27,8 +25,8 @@
     </main>
 
     <!-- Footer -->
-    <footer class="mt-auto border-t border-[var(--forest-border)]">
-      <UContainer class="py-6 text-sm text-[var(--forest-muted)]">
+    <footer class="border-border-subtle border-t">
+      <UContainer class="text-text-dim py-6 text-sm">
         © {{ new Date().getFullYear() }} Chofongsua
       </UContainer>
     </footer>
