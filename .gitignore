@@ -22,3 +22,7 @@ logs
 .env
 .env.*
 !.env.example
+
+
+# Local documents for Agent reference
+.local-docs
